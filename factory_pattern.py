@@ -8,7 +8,7 @@ class HamAndMushroomPizza(Pizza):
         self._price = 8.5
 class DeluxePizza(Pizza):
     def __init__(self):
-        self._price = 10.5
+        self._price = 15.5
 class HawaiianPizza(Pizza):
     def __init__(self):
         self._price = 11.5
