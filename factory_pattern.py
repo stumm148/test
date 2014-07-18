@@ -1,21 +1,19 @@
-class model:
+class Pizza(object):
     def __init__(self):
-        self.data = {'profession':'statybininkas', 'atlyginimas':'3000'}
-    def info(self):
-        return self.data
-
-class controler:
+        self._price = None
+    def get_price(self):
+        return self._price
+class HamAndMushroomPizza(Pizza):
     def __init__(self):
-        self.model = model()
-        self.view = view()
-    def control_mvc(self):
-        part = self.model.info()
-        etc = self.view.tttt(part)
-        #print self.view
+        self._price = 8.5
+class DeluxePizza(Pizza):
+    def __init__(self):
+        self._price = 10.5
+class HawaiianPizza(Pizza):
+    def __init__(self):
+        self._price = 11.5
         
-class view:
-    def tttt(self,part):
-        print 'cia toks {0} tekstas {1}' .format(part['profession'],part['atlyginimas'])
-
 if __name__ == '__main__':
-    controler().control_mvc() 
+    for pizza_class in (HamAndMushroomPizza, DeluxePizza, HawaiianPizza):
+        print 'Price of {0} is {1}' \
+             .format(pizza_class.__name__, pizza_class().get_price())
